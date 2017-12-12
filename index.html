@@ -3,27 +3,45 @@
   <head>
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
     <meta charset="utf-8"/>
-    <style> 
-      body {
-        padding: 0; margin: 0;
-      } 
-      canvas {
-        vertical-align: top;
-      }
-      /* this canvas will be created by p5js */
-      /* #defaultCanvas0 {
-        display: block;
-        margin: auto;
-        padding-top: 30px;
-      } */
-    </style>
     <script src="libraries/p5.js"></script>
     <script src="libraries/p5.dom.js"></script>
     <script src="pair.js"></script>
     <script src="element.js"></script>
     <script src="sketch.js"></script>
     <script src="parser.js"></script>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+      <header>
+          <h1>
+            cons cons cons
+          </h1>
+        </header>
+    
+        <main>
+          <div id="left">
+            <p class="bold">Oh hi,</p>
+            <p>
+              this little site helps you test your hierarchical structure skills.<br/>
+              Enter valid scheme code below. Use the <b>cons</b> and <b>list</b> functions.
+            </p>
+            <form>
+              <textarea id="code" type="text" placeholder="Enter something like (cons 1 2) ..."></textarea>
+              <button id="btn" type="button">Draw it!</button>
+            </form>
+          </div>
+          <div id="right">
+
+          </div>
+        </main>
+    
+        <footer>
+          <p>Read up on this topic
+            <a href="https://sarabander.github.io/sicp/html/2_002e2.xhtml#g_t2_002e2">
+              here.
+            </a>
+          </p>
+          
+        </footer>
   </body>
 </html>

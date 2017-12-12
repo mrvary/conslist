@@ -4,34 +4,21 @@ let validationMessage;
 let parser;
 let textArea;
 
-const BOX_SIZE = 25;
+const BOX_SIZE = 20;
 
 function setup() {
-  createCanvas(1000, 700);
+  let canvas = createCanvas(700, 450);
+  background(234, 123, 1, 40);
 
-  textArea = createElement("textarea", "");
-  textArea.position(20, 65);
-  textArea.size(400, 200);
-  textArea.value(`(cons (cons (cons nil
-                  (cons 6
-                        (cons 1
-                              (cons 0
-                                    (cons 2 4)))))
-            (cons 3 3))
-      (cons 10
-            (cons 7
-                  (cons 8
-                        (cons 9
-                              (cons 3
-                                    nil))))))`);
+  canvas.parent("right");
 
-  button = createButton('submit');
-  // button.position(input.x + input.width, 65);
-  button.position(textArea.x + textArea.width, 65);
-  button.mousePressed(parseInput);
+  textArea = document.getElementById('code');
+
+  button = document.getElementById('btn')
+  button.onclick = parseInput;
 
   validationMessage = createP('');
-  validationMessage.position(textArea.x, textArea.y + 240);
+  validationMessage.parent('left');
 
   window.onerror = function (error) {
     validationMessage.html(error);
@@ -44,12 +31,13 @@ function setup() {
 function parseInput() {
   validationMessage.html("");
   background(255);
+  background(234, 123, 1, 40);
 
   // let text = input.value();
-  let text = textArea.value();
+  let text = textArea.value;
   let grammarResult = parseWithGrammar(text);
   
-  const result = new Pair(button.x + 100, button.y, grammarResult);
+  const result = new Pair(20, 20, grammarResult);
   result.draw();
 }
 
