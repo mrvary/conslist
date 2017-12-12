@@ -45,29 +45,6 @@ function parseWithGrammar(text) {
   return SCHEME.parse(text);
 }
 
-function validateInput(t) {
-  // in case of no matches, return an empty array
-  const openParens = t.match(/\(/g) || [];
-  const closedParens = t.match(/\)/g) || [];
-
-  push();
-  fill(255,0,0);
-  validationMessage.style("font-family", "courier");
-  validationMessage.style("color", "red");
-  
-  if (openParens.length > closedParens.length) {
-    validationMessage.html("missing closing parenthesis!");
-    textArea.style("background", "pink");
-  } else if (closedParens.length > openParens.length) {
-    validationMessage.html("missing opening parenthesis!");
-    textArea.style("background", "pink");
-  } else {
-    validationMessage.html("");
-    textArea.style("background", "white");
-  }
-  pop();
-}
-
 function createRandomBackground(elements) {
     for (let i = 0; i < elements; i++) {
       const test3 = new Pair(
