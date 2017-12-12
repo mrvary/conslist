@@ -15,7 +15,7 @@ Pair.prototype.draw = function () {
 Pair.prototype.drawLeftSide = function () {
   drawBox(this.posLeft);
 
-  if (typeof this.content[0] === "number") {
+  if (typeof this.content[0] === "number" || typeof this.content[0] === "string") {
     drawElement(this.posLeft, this.middleLeft, this.content[0], 0);
   }
 
@@ -31,7 +31,7 @@ Pair.prototype.drawLeftSide = function () {
 Pair.prototype.drawRightSide = function () {
   drawBox(this.posRight);
   
-  if (typeof this.content[1] === "number") {
+  if (typeof this.content[1] === "number" || typeof this.content[1] === "string") {
     drawElement(this.posRight, this.middleRight, this.content[1], 5);
   }
   

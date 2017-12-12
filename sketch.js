@@ -1,4 +1,4 @@
-let input; 
+let input;
 let button;
 let validationMessage;
 let parser;
@@ -25,7 +25,7 @@ function setup() {
   }
 
   // (cons (cons 9 (cons (cons (cons 7 (cons 5 (cons 1 nil))) 5) (cons 3 7))) (cons 8 (cons 1 (cons 4 (cons 2 nil)))))
-  createRandomBackground(6);
+  createRandomBackground(8);
 }
 
 function parseInput() {
@@ -36,7 +36,7 @@ function parseInput() {
   // let text = input.value();
   let text = textArea.value;
   let grammarResult = parseWithGrammar(text);
-  
+
   const result = new Pair(20, 20, grammarResult);
   result.draw();
 }
@@ -46,18 +46,19 @@ function parseWithGrammar(text) {
 }
 
 function createRandomBackground(elements) {
-    for (let i = 0; i < elements; i++) {
-      const test3 = new Pair(
-        random(width), 
-        random(height), 
-        [floor(random(100)), floor(random(10))]);
-      test3.draw();
+  const symbols = ['∆','†','¥','π','Ω','◊','','‡','λ'];
 
-      const test4 = new Pair(
-        random(width), 
-        random(height), 
-        [floor(random(100)), []]);
-      test4.draw();
-    }
+  for (let i = 0; i < elements; i++) {
+    const test3 = new Pair(
+      random(width),
+      random(height),
+      [symbols[floor(random(symbols.length))], symbols[floor(random(symbols.length))]]);
+    test3.draw();
+
+    const test4 = new Pair(
+      random(width),
+      random(height),
+      [symbols[floor(random(symbols.length))], []]);
+    test4.draw();
+  }
 }
-
