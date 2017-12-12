@@ -49,7 +49,7 @@ function parseInput() {
 }
 
 function parseWithGrammar(text) {
-  return PARSER.parse(text);
+  return SCHEME.parse(text);
 }
 
 function validateInput(t) {
