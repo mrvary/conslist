@@ -1,0 +1,42 @@
+// Simple Scheme Grammar
+// ==========================
+//
+// Accepts expressions like "(cons 1 2)" etc. and returns an array.
+
+Term 
+  = _ "(" _ "cons" _ car:Argument _ cdr:Argument _ ")" _ 
+      { return [car, cdr] }
+  / "(" _ "list" Arguments: ( _ Argument )+ ")" 
+      {
+      let values = [];
+
+      Arguments.forEach(function (el) {
+          values.push(el[1]);
+      });
+
+      let f = function(array) {
+          if (array.length === 1) {
+              return [array[0],[]];
+          } else {
+              return [array[0], f(array.slice(1))]
+          }
+      }
+
+      return f(values); 
+    }
+
+Argument 
+  = Term
+  / Integer
+  / Nil
+
+Nil "nil/null"
+  = "nil" { return [] }
+  / "null" { return [] }
+  / "'()" { return [] }
+  
+Integer "integer"
+  = [0-9]+ { return parseInt(text(), 10); }
+
+_ "whitespace"
+  = [ \t\n\r]*
