@@ -18,13 +18,13 @@ function setup() {
   button.onclick = parseInput;
 
   validationMessage = createP('');
+  validationMessage.addClass('error');
   validationMessage.parent('left');
 
   window.onerror = function (error) {
     validationMessage.html(error);
   }
 
-  // (cons (cons 9 (cons (cons (cons 7 (cons 5 (cons 1 nil))) 5) (cons 3 7))) (cons 8 (cons 1 (cons 4 (cons 2 nil)))))
   createRandomBackground(8);
 }
 
@@ -33,7 +33,6 @@ function parseInput() {
   background(255);
   background(234, 123, 1, 40);
 
-  // let text = input.value();
   let text = textArea.value;
   let grammarResult = parseWithGrammar(text);
 
