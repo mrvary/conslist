@@ -1,6 +1,3 @@
-# conslist
-tiny tool to display hierarchical structures that are written in scheme
-
 # Writing a tiny Scheme parser in Javascript
 
 If you start your computer science degree at the University of Applied Sciences in Würzburg, one of the first lectures you’ll attend is an algorithms class, which is closely modelled after the infamous [Structure and Interpretation of Computer Programms](TODO). <br>
