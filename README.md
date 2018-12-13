@@ -1,7 +1,7 @@
 # Writing a tiny Scheme parser in Javascript
 
-If you start your computer science degree at the University of Applied Sciences in Würzburg, one of the first lectures you’ll attend is an algorithms class, which is closely modelled after the infamous [Structure and Interpretation of Computer Programms](TODO). <br>
-I already got my feet wet with javascript programming and liked its roots in functional programming. No wonder I felt inclined to learn Scheme, the language it was [heavily inspired by](TODO). <br>
+If you start your computer science degree at the University of Applied Sciences in Würzburg, one of the first lectures you’ll attend is an algorithms class, which is closely modelled after the infamous [Structure and Interpretation of Computer Programms](https://sarabander.github.io/sicp/). <br>
+I already got my feet wet with javascript programming and liked its roots in functional programming. No wonder I felt inclined to learn Scheme, the language it was [heavily inspired by](http://speakingjs.com/es5/ch04.html). <br>
 Completing the course was truly a fun and enlightening experience and one year later I applied to be a teaching assistant for this exact lecture. I wanted to share the insights and fun I had and help those who missed their ```Java.wayOfCoding()```.
 
 ## ... but why?
@@ -24,13 +24,13 @@ The first approach was pretty much the hackiest solution I could come up with, b
 
 ## Draw stuff
 
-Although everything could have been done via the canvas API, I went with [p5js](TODO), a port of [Processing](TODO) to JavaScript. I enjoyed using it before and I wanted to get things done rather quickly.
+Although everything could have been done via the canvas API, I went with [p5js](https://p5js.org/), a port of [Processing](https://processing.org/) to JavaScript. I enjoyed using it before and I wanted to get things done rather quickly.
 
 Most of the drawing logic is rather trivial, so I won't go into any details. In ```pair.js``` I created a pair abstraction that encapsulates the position and content of each pair and provides basic drawing functionality.
 
 ## Parse all the data - part 2
 
-Replacing tokens in a string felt pretty hacky, there’s no denying it. Also I was attending a course on (programming theory?) and learning about grammars and state machines. As there is pretty much a Javascript library for everything I started looking if I could pimp my parsing logic and stumbled upon [peg.js - a >>>>>>>>>>>>>> for javascript](TODO). 
+Replacing tokens in a string felt pretty hacky, there’s no denying it. Also I was attending a course on (programming theory?) and learning about grammars and state machines. As there is pretty much a Javascript library for everything I started looking if I could pimp my parsing logic and stumbled upon [PEG.js - a Parser Generator for JavaScript](https://pegjs.org/). 
 
 You can try out everything online, so I build a context free grammar for this tiny part of scheme that I needed. It looks like this:
 
